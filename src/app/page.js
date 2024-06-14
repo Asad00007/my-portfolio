@@ -1,112 +1,296 @@
+"use client";
+import Navbar from "@/components/navbar/Navbar";
+import { Poppins } from "next/font/google";
+import { ReactTyped } from "react-typed";
+import { IoMdRefresh } from "react-icons/io";
+import Asad from "@/assets/AsadUllah.jpg";
+// import Flip1 from "@/assets/Flip.jpg";
+// import Awara from "@/assets/Awara.jpg";
+// import Spotified from "@/assets/Spotified.jpg";
+// import Relasto from "@/assets/Relasto.mp4";
+import Hand from "@/assets/Hand.gif";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa6";
+import { work } from "../../data";
+import { Fade, Flip } from "react-awesome-reveal";
 import Image from "next/image";
+import { skills } from "../../data";
+import { useEffect, useState } from "react";
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 export default function Home() {
+  const half = skills.slice(0, 6);
+
+  const [showMore, setShowMore] = useState(false);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className={poppins.className}>
+      <Navbar />
+
+      <div className="w-[1300px] mx-auto max-w-full px-5 py-20 md-1230:py-10 flex flex-col md-1230:flex-row gap-5 justify-between md-1230:h-screen-minus-100 mt-[100px] items-center">
+        <div className="basis-full md:basis-1/2 ">
+          <h3 className="text-2xl md:text-3xl mb-5 flex items-center">
+            Hello,
+            <div className="w-[35px] h-[35px]">
+              <Image src={Hand} alt="waving" />
+            </div>
+          </h3>
+
+          <ReactTyped
+            strings={["I'm Asad Ullah!"]}
+            typeSpeed={40}
+            className="text-3xl md:text-[55px] leading-normal"
+          />
+          <br />
+          <div className="my-4"></div>
+          <ReactTyped
+            strings={["Web Developer", "Tech Enthusiast", "Software Engineer"]}
+            typeSpeed={40}
+            backSpeed={50}
+            loop
+            className="text-2xl md:text-3xl "
+          ></ReactTyped>
+          <p className="my-5">
+            I'm a web developer with a strong background in creating dynamic and
+            responsive websites. I have a deep understanding of front-end and
+            back-end technologies, and I love bringing innovative web
+            applications to life.
+          </p>
+        </div>
+        <div className="basis-full md:basis-1/2 flex flex-col-reverse gap-5 md:gap-0 md:flex-row md:mt-24 md-1230:mt-0">
+          <div className="border-2 border-primary rounded-2xl md:w-[400px] overflow-hidden md:translate-x-10 md-1100:translate-x-16 md:translate-y-12">
+            <div className="w-full border-b-2  border-primary p-3 flex justify-center items-center gap-3 bg-primary bg-opacity-30 relative">
+              <div className="flex gap-2 absolute top-4 left-4">
+                <div className="border-2 border-primary p-2 rounded-full bg-white"></div>
+                <div className="border-2 border-primary p-2 rounded-full bg-white"></div>
+                <div className="border-2 border-primary p-2 rounded-full bg-white"></div>
+              </div>
+              <div className="uppercase text-primary font-semibold">Links</div>
+            </div>
+            <div className="p-10 text-primary">
+              <h1 className="text-[18px] font-semibold mb-3 select-none">
+                Me, elsewhere
+              </h1>
+              <p className="text-[14px] select-none">
+                If you want to find me on the interwebs, I’ve got a bunch of
+                links for you below. Explore them at your own peril.
+              </p>
+              <div className="flex gap-3 mt-3">
+                <div className="border-2 border-primary rounded-md p-1 bg-primary bg-opacity-30 hover:scale-105 transition duration-300 ease-in-out cursor-pointer">
+                  <FaGithub />
+                </div>
+                <div className="border-2 border-primary rounded-md p-1 bg-primary bg-opacity-30 hover:scale-105 transition duration-300 ease-in-out cursor-pointer">
+                  <FaLinkedin />
+                </div>
+                <div className="border-2 border-primary rounded-md p-1 bg-primary bg-opacity-30 hover:scale-105 transition duration-300 ease-in-out cursor-pointer">
+                  <FaTwitter />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="border-2 border-primary rounded-2xl md:w-[400px] overflow-hidden md:-ml-16 md:-mt-24 md:self-start z-10">
+            <div className="w-full border-b-2  border-primary p-3 flex justify-between items-center gap-3 bg-primary bg-opacity-30">
+              <div className="flex gap-2">
+                <div className="border-2 border-primary p-2 rounded-full bg-white"></div>
+                <div className="border-2 border-primary p-2 rounded-full bg-white"></div>
+                <div className="border-2 border-primary p-2 rounded-full bg-white"></div>
+              </div>
+              <div className="border-2 border-primary px-2 py-1 rounded-md flex-1 select-none text-[14px] text-primary bg-white">
+                https://about.me
+              </div>
+              <div className="border-2 border-primary p-1.5 rounded-md bg-white">
+                <IoMdRefresh className="text-primary" />
+              </div>
+            </div>
+            <div className="p-10 bg-white text-primary">
+              <h1 className="text-[18px] font-semibold mb-3 select-none">
+                ABOUT ME
+              </h1>
+              <p className="text-[14px] select-none">
+                I’m Asad Ullah, a web developer who enjoys building
+                user-friendly websites, exploring new technologies, and making
+                the web a better place for everyone.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <Fade duration={1500} fraction={0.2} triggerOnce="true">
+        <div className="w-[1300px] max-w-full mx-auto  px-4 md-1100:h-screen-minus-100 flex flex-col items-center justify-between py-5 gap-6 ">
+          <h1 className="text-2xl md:text-4xl font-semibold text-center">
+            Featured project made using{" "}
+            <span className="text-primary">MERN</span> stack
+          </h1>
+          <div className="px-5 py-10 md:px-10 md:py-10 bg-primary rounded-[30px] w-[95%] flex flex-col items-center justify-between gap-10 md:gap-2 text-white md:h-[450px] shadow-md">
+            <h1 className="text-xl md:text-[26px] font-semibold text-center">
+              Freelancing Website
+            </h1>
+            <p>
+              Created a freelancing website using the MERN stack that connects
+              users with a diverse pool of skilled freelancers. The platform
+              enables clients to post projects, review freelancer profiles, and
+              hire talent based on specific requirements, ensuring seamless
+              collaboration and efficient project completion. With features like
+              secure user authentication, real-time messaging, and a
+              user-friendly interface, it provides an optimal experience for
+              both freelancers and clients.
+            </p>
+            <div className="flex gap-3 self-start items-center">
+              <Flip triggerOnce="true">
+                <div className="w-[75px] h-[75px] overflow-hidden rounded-full">
+                  <Image
+                    src={Asad}
+                    alt="Profile"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </Flip>
+              <div>
+                <h1 className="text-[18px]">Asad Ullah</h1>
+                <h2 className="opacity-80">Air University, Islamabad</h2>
+              </div>
+            </div>
+          </div>
+          <button className="bg-primary rounded-[32px] py-5 px-20 text-white text-[18px] hover:bg-opacity-95 hover:scale-95 transition duration-300 ease-in-out ">
+            Explore more
+          </button>
+        </div>
+      </Fade>
+      <Fade duration={1500} fraction={0.2} triggerOnce="true">
+        <div className="w-[1300px] max-w-full mx-auto px-4 pt-5 pb-10 flex flex-col items-center justify-center">
+          <h1 className="text-2xl md:text-4xl font-semibold text-center my-10">
+            My Skills
+          </h1>
+          <div className=" w-[1200px] max-w-full mx-auto flex flex-wrap justify-center items-center my-5 gap-10">
+            {(!showMore ? half : skills).map((item, index) => {
+              return (
+                <div className="flex flex-col gap-2" key={index}>
+                  <div className="flex items-center justify-center w-[150px] h-[150px] bg-primary bg-opacity-30 rounded-lg md:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer group">
+                    <Image
+                      src={item.link}
+                      alt={item.name}
+                      width={100}
+                      height={100}
+                      className="group-hover:scale-105 transition duration-300 ease-in-out"
+                    />
+                  </div>
+                  <div className="text-center text-primary font-semibold">
+                    {item.name}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div
+            className="text-primary font-semibold hover:underline cursor-pointer mt-5"
+            onClick={() => setShowMore(!showMore)}
+          >
+            {showMore ? "Show less" : "Show more"}
+          </div>
+        </div>
+      </Fade>
+      <div className="w-[1300px] max-w-full mx-auto px-5 py-10">
+        <div className="flex flex-wrap justify-between items-center gap-3">
+          <div className="md:w-[570px] md-900:w-[700px] space-y-3">
+            <h1 className="text-2xl md:text-4xl font-semibold ">My Projects</h1>
+            <p className="opacity-80">
+              I've been working as a front-end developer for the past year,
+              specializing in creating dynamic, responsive web applications. My
+              expertise lies in HTML, CSS, JavaScript, and React. I excel at
+              translating design into interactive, efficient user experiences,
+              ensuring high-quality code and optimal performance. I often take
+              on additional responsibilities to ensure project success and user
+              satisfaction. Outside of “work-work,” I love experimenting with
+              new technologies and developing side projects, some of which are
+              showcased here.
+            </p>
+          </div>
+          <div className="flex flex-row md:flex-col gap-3">
+            <div className="bg-[#d6ddff] self-start md:self-end md:text-right rounded-3xl py-2 px-3 flex gap-1">
+              <div className="scale-75 py-[1px] px-[11px] rounded-full bg-[#2e33cd]"></div>
+              <span className="text-[#2e33cd] text-[14px]">Work</span>
+            </div>
+            <div className="bg-[#ffcce9] self-end text-right rounded-3xl py-2 px-3 flex gap-1">
+              <div className="scale-75 py-[1px] px-[11px] rounded-full bg-[#891a80]"></div>
+              <span className="text-[#891b80] text-[14px]">Side Projects</span>
+            </div>
+            {/* <div className="bg-[#ffcce9] self-end text-right rounded-3xl py-1 px-2 flex gap-1">
+              <div className="scale-75 py-[1px] px-[12px] rounded-full bg-[#891a80]"></div>
+              <span className="text-[#891b80]">Side Projects</span>
+            </div> */}
+          </div>
+        </div>
+        <div className="flex flex-col gap-5 md:gap-10 items-center justify-center my-8 md:my-14">
+          <div className="flex flex-col md-1000:flex-row justify-between  gap-10 w-full">
+            {work.slice(0, 2).map((item, index) => {
+              return (
+                <div className="flex flex-col gap-5" key={index}>
+                  <div className=" bg-gray-200 rounded-3xl overflow-hidden shadow-md">
+                    <Image
+                      src={item.img}
+                      alt="Flip-app"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="bg-[#d6ddff] self-start rounded-3xl py-2 px-3 flex gap-1">
+                    <div className="scale-75 py-[1px] px-[11px] rounded-full bg-[#2e33cd]"></div>
+                    <span className="text-[#2e33cd] text-[14px]">Work</span>
+                  </div>
+                  <div>
+                    <h1 className="text-2xl font-semibold mb-2">{item.name}</h1>
+                    <p className="opacity-80">{item.shortDesc}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="flex flex-col md-1000:flex-row justify-between  gap-10 w-full">
+            {work.slice(2, 4).map((item, index) => {
+              return (
+                <div className="flex flex-col gap-5" key={index}>
+                  <div className=" bg-gray-200 rounded-3xl overflow-hidden shadow-md">
+                    <Image
+                      src={item.img}
+                      alt="Flip-app"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="bg-[#d6ddff] self-start rounded-3xl py-2 px-3 flex gap-1">
+                    <div className="scale-75 py-[1px] px-[11px] rounded-full bg-[#2e33cd]"></div>
+                    <span className="text-[#2e33cd] text-[14px]">Work</span>
+                  </div>
+                  <div>
+                    <h1 className="text-2xl font-semibold mb-2">{item.name}</h1>
+                    <p className="opacity-80">{item.shortDesc}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <div className="flex flex-col md-1000:flex-row justify-between  gap-10 w-full">
+          <div className="flex flex-col gap-5">
+            <div className=" bg-gray-200 rounded-3xl overflow-hidden shadow-md">
+              {/* <video src={Relasto}></video> */}
+            </div>
+            <div className="bg-[#d6ddff] self-start rounded-3xl py-2 px-3 flex gap-1">
+              <div className="scale-75 py-[1px] px-[11px] rounded-full bg-[#2e33cd]"></div>
+              <span className="text-[#2e33cd] text-[14px]">Work</span>
+            </div>
+            <div>
+              <h1 className="text-2xl font-semibold mb-2">
+                Uni app • Admin Dashboard
+              </h1>
+              <p className="opacity-80">
+                Developed an admin dashboard for a ride booking app that
+                monitors trip statuses, manages drivers and users, and provides
+                real-time analytics for optimized fleet management and
+                operational efficiency.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   );
