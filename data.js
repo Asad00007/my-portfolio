@@ -2,6 +2,10 @@ import Flip1 from "@/assets/Flip.jpg";
 import Awara from "@/assets/Awara.jpg";
 import Spotified from "@/assets/Spotified.jpg";
 import Uniapp from "@/assets/Uniapp.jpg";
+import sig from "@/assets/sig.PNG";
+import Weather from "@/assets/Weather.jpg";
+import Hubble from "@/assets/Hubble.PNG";
+import flappy from "@/assets/flappy.jpg";
 
 export const skills = [
   {
@@ -86,6 +90,38 @@ export const work = [
     shortDesc:
       "Developed an admin dashboard for a ride booking app that monitors trip statuses, manages drivers and users, and provides real-time analytics for optimized fleet management and operational efficiency.",
     img: Uniapp,
+  },
+];
+export const side = [
+  {
+    name: "Relasto • Real Estate Platform",
+    shortDesc:
+      "Created a real estate website using Next.js offering users a seamless platform to explore properties based on their preferred sales type, whether it's buying, selling, or renting.",
+    img: "/Relasto.mp4",
+  },
+  {
+    name: "Huddle • Simple Landing Page",
+    shortDesc:
+      "Created a simple responsive and user-friendly landing page of a website using Styled Components in React js.",
+    img: Hubble,
+  },
+  {
+    name: "Weather app • Weather Forecast Application",
+    shortDesc:
+      "Created a weather forecast application using React js and Weather Api to fetch data across all cities of Pakistan",
+    img: Weather,
+  },
+  {
+    name: "Flappy Bird clone • Gaming application",
+    shortDesc:
+      "Created a Flappy Bird replica using Unity and C#, featuring realistic physics, responsive controls, and dynamic obstacles.",
+    img: flappy,
+  },
+  {
+    name: "SigFoods • E-commerce website",
+    shortDesc:
+      "Developed an e-commerce platform specializing in high-quality food items, offering a seamless shopping experience and fresh delivery service. ",
+    img: sig,
   },
 ];
 // Great start with your portfolio website! Here are some sections you can consider adding after your "Featured Project":

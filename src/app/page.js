@@ -4,13 +4,10 @@ import { Poppins } from "next/font/google";
 import { ReactTyped } from "react-typed";
 import { IoMdRefresh } from "react-icons/io";
 import Asad from "@/assets/AsadUllah.jpg";
-// import Flip1 from "@/assets/Flip.jpg";
-// import Awara from "@/assets/Awara.jpg";
-// import Spotified from "@/assets/Spotified.jpg";
-// import Relasto from "@/assets/Relasto.mp4";
+
 import Hand from "@/assets/Hand.gif";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa6";
-import { work } from "../../data";
+import { side, work } from "../../data";
 import { Fade, Flip } from "react-awesome-reveal";
 import Image from "next/image";
 import { skills } from "../../data";
@@ -26,8 +23,7 @@ export default function Home() {
   const [showMore, setShowMore] = useState(false);
   return (
     <main className={poppins.className}>
-      <Navbar />
-
+      {/* <Navbar /> */}
       <div className="w-[1300px] mx-auto max-w-full px-5 py-20 md-1230:py-10 flex flex-col md-1230:flex-row gap-5 justify-between md-1230:h-screen-minus-100 mt-[100px] items-center">
         <div className="basis-full md:basis-1/2 ">
           <h3 className="text-2xl md:text-3xl mb-5 flex items-center">
@@ -77,12 +73,20 @@ export default function Home() {
                 links for you below. Explore them at your own peril.
               </p>
               <div className="flex gap-3 mt-3">
-                <div className="border-2 border-primary rounded-md p-1 bg-primary bg-opacity-30 hover:scale-105 transition duration-300 ease-in-out cursor-pointer">
+                <a
+                  href="https://github.com/Asad00007"
+                  target="_blank"
+                  className="border-2 border-primary rounded-md p-1 bg-primary bg-opacity-30 hover:scale-105 transition duration-300 ease-in-out cursor-pointer"
+                >
                   <FaGithub />
-                </div>
-                <div className="border-2 border-primary rounded-md p-1 bg-primary bg-opacity-30 hover:scale-105 transition duration-300 ease-in-out cursor-pointer">
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/asad-ullah-7500b0243?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                  target="_blank"
+                  className="border-2 border-primary rounded-md p-1 bg-primary bg-opacity-30 hover:scale-105 transition duration-300 ease-in-out cursor-pointer"
+                >
                   <FaLinkedin />
-                </div>
+                </a>
                 <div className="border-2 border-primary rounded-md p-1 bg-primary bg-opacity-30 hover:scale-105 transition duration-300 ease-in-out cursor-pointer">
                   <FaTwitter />
                 </div>
@@ -158,7 +162,10 @@ export default function Home() {
         </div>
       </Fade>
       <Fade duration={1500} fraction={0.2} triggerOnce="true">
-        <div className="w-[1300px] max-w-full mx-auto px-4 pt-5 pb-10 flex flex-col items-center justify-center">
+        <div
+          className="w-[1300px] max-w-full mx-auto px-4 pt-5 pb-10 flex flex-col items-center justify-center"
+          id="skills"
+        >
           <h1 className="text-2xl md:text-4xl font-semibold text-center my-10">
             My Skills
           </h1>
@@ -190,106 +197,179 @@ export default function Home() {
           </div>
         </div>
       </Fade>
-      <div className="w-[1300px] max-w-full mx-auto px-5 py-10">
-        <div className="flex flex-wrap justify-between items-center gap-3">
-          <div className="md:w-[570px] md-900:w-[700px] space-y-3">
-            <h1 className="text-2xl md:text-4xl font-semibold ">My Projects</h1>
-            <p className="opacity-80">
-              I've been working as a front-end developer for the past year,
-              specializing in creating dynamic, responsive web applications. My
-              expertise lies in HTML, CSS, JavaScript, and React. I excel at
-              translating design into interactive, efficient user experiences,
-              ensuring high-quality code and optimal performance. I often take
-              on additional responsibilities to ensure project success and user
-              satisfaction. Outside of “work-work,” I love experimenting with
-              new technologies and developing side projects, some of which are
-              showcased here.
-            </p>
-          </div>
-          <div className="flex flex-row md:flex-col gap-3">
-            <div className="bg-[#d6ddff] self-start md:self-end md:text-right rounded-3xl py-2 px-3 flex gap-1">
-              <div className="scale-75 py-[1px] px-[11px] rounded-full bg-[#2e33cd]"></div>
-              <span className="text-[#2e33cd] text-[14px]">Work</span>
-            </div>
-            <div className="bg-[#ffcce9] self-end text-right rounded-3xl py-2 px-3 flex gap-1">
-              <div className="scale-75 py-[1px] px-[11px] rounded-full bg-[#891a80]"></div>
-              <span className="text-[#891b80] text-[14px]">Side Projects</span>
-            </div>
-            {/* <div className="bg-[#ffcce9] self-end text-right rounded-3xl py-1 px-2 flex gap-1">
-              <div className="scale-75 py-[1px] px-[12px] rounded-full bg-[#891a80]"></div>
-              <span className="text-[#891b80]">Side Projects</span>
-            </div> */}
-          </div>
-        </div>
-        <div className="flex flex-col gap-5 md:gap-10 items-center justify-center my-8 md:my-14">
-          <div className="flex flex-col md-1000:flex-row justify-between  gap-10 w-full">
-            {work.slice(0, 2).map((item, index) => {
-              return (
-                <div className="flex flex-col gap-5" key={index}>
-                  <div className=" bg-gray-200 rounded-3xl overflow-hidden shadow-md">
-                    <Image
-                      src={item.img}
-                      alt="Flip-app"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="bg-[#d6ddff] self-start rounded-3xl py-2 px-3 flex gap-1">
-                    <div className="scale-75 py-[1px] px-[11px] rounded-full bg-[#2e33cd]"></div>
-                    <span className="text-[#2e33cd] text-[14px]">Work</span>
-                  </div>
-                  <div>
-                    <h1 className="text-2xl font-semibold mb-2">{item.name}</h1>
-                    <p className="opacity-80">{item.shortDesc}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          <div className="flex flex-col md-1000:flex-row justify-between  gap-10 w-full">
-            {work.slice(2, 4).map((item, index) => {
-              return (
-                <div className="flex flex-col gap-5" key={index}>
-                  <div className=" bg-gray-200 rounded-3xl overflow-hidden shadow-md">
-                    <Image
-                      src={item.img}
-                      alt="Flip-app"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="bg-[#d6ddff] self-start rounded-3xl py-2 px-3 flex gap-1">
-                    <div className="scale-75 py-[1px] px-[11px] rounded-full bg-[#2e33cd]"></div>
-                    <span className="text-[#2e33cd] text-[14px]">Work</span>
-                  </div>
-                  <div>
-                    <h1 className="text-2xl font-semibold mb-2">{item.name}</h1>
-                    <p className="opacity-80">{item.shortDesc}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        <div className="flex flex-col md-1000:flex-row justify-between  gap-10 w-full">
-          <div className="flex flex-col gap-5">
-            <div className=" bg-gray-200 rounded-3xl overflow-hidden shadow-md">
-              {/* <video src={Relasto}></video> */}
-            </div>
-            <div className="bg-[#d6ddff] self-start rounded-3xl py-2 px-3 flex gap-1">
-              <div className="scale-75 py-[1px] px-[11px] rounded-full bg-[#2e33cd]"></div>
-              <span className="text-[#2e33cd] text-[14px]">Work</span>
-            </div>
-            <div>
-              <h1 className="text-2xl font-semibold mb-2">
-                Uni app • Admin Dashboard
+      <div className="w-[1300px] max-w-full mx-auto px-5 py-10" id="projects">
+        <Fade duration={1500} fraction={0.2} triggerOnce="true">
+          <div className="flex flex-wrap justify-between items-center gap-3">
+            <div className="md:w-[570px] md-900:w-[700px] space-y-3">
+              <h1 className="text-2xl md:text-4xl font-semibold ">
+                My Projects
               </h1>
               <p className="opacity-80">
-                Developed an admin dashboard for a ride booking app that
-                monitors trip statuses, manages drivers and users, and provides
-                real-time analytics for optimized fleet management and
-                operational efficiency.
+                I've been working as a front-end developer for the past year,
+                specializing in creating dynamic, responsive web applications.
+                My expertise lies in HTML, CSS, JavaScript, and React. I excel
+                at translating design into interactive, efficient user
+                experiences, ensuring high-quality code and optimal performance.
+                I often take on additional responsibilities to ensure project
+                success and user satisfaction. Outside of “work-work,” I love
+                experimenting with new technologies and developing side
+                projects, some of which are showcased here.
               </p>
             </div>
+            <div className="flex flex-row md:flex-col gap-3">
+              <div className="bg-[#d6ddff] self-start md:self-end md:text-right rounded-3xl py-2 px-3 flex gap-1">
+                <div className="scale-75 py-[1px] px-[11px] rounded-full bg-[#2e33cd]"></div>
+                <span className="text-[#2e33cd] text-[14px]">Work</span>
+              </div>
+              <div className="bg-[#ffcce9] self-end text-right rounded-3xl py-2 px-3 flex gap-1">
+                <div className="scale-75 py-[1px] px-[11px] rounded-full bg-[#891a80]"></div>
+                <span className="text-[#891b80] text-[14px]">
+                  Side Projects
+                </span>
+              </div>
+            </div>
           </div>
+        </Fade>
+        <div className="flex flex-col gap-5 md:gap-10 items-center justify-center my-8 md:my-14">
+          <Fade
+            duration={1500}
+            fraction={0.1}
+            triggerOnce="true"
+            direction="up"
+          >
+            <div className="flex flex-col md-1000:flex-row justify-between  gap-10 w-full">
+              {work.slice(0, 2).map((item, index) => {
+                return (
+                  <div className="flex flex-col gap-5" key={index}>
+                    <div className=" bg-gray-200 rounded-3xl overflow-hidden shadow-md transition duration-300 ease-in-out hover:scale-[1.02] hover:shadow-custom-blue">
+                      <Image
+                        src={item.img}
+                        alt={item.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="bg-[#d6ddff] self-start rounded-3xl py-2 px-3 flex gap-1">
+                      <div className="scale-75 py-[1px] px-[11px] rounded-full bg-[#2e33cd]"></div>
+                      <span className="text-[#2e33cd] text-[14px]">Work</span>
+                    </div>
+                    <div>
+                      <h1 className="text-2xl font-semibold mb-2">
+                        {item.name}
+                      </h1>
+                      <p className="opacity-80">{item.shortDesc}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="flex flex-col md-1000:flex-row justify-between  gap-10 w-full">
+              {work.slice(2, 4).map((item, index) => {
+                return (
+                  <div className="flex flex-col gap-5" key={index}>
+                    <div className=" bg-gray-200 rounded-3xl overflow-hidden shadow-md transition duration-300 ease-in-out hover:scale-[1.02] hover:shadow-custom-blue">
+                      <Image
+                        src={item.img}
+                        alt={item.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="bg-[#d6ddff] self-start rounded-3xl py-2 px-3 flex gap-1">
+                      <div className="scale-75 py-[1px] px-[11px] rounded-full bg-[#2e33cd]"></div>
+                      <span className="text-[#2e33cd] text-[14px]">Work</span>
+                    </div>
+                    <div>
+                      <h1 className="text-2xl font-semibold mb-2">
+                        {item.name}
+                      </h1>
+                      <p className="opacity-80">{item.shortDesc}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </Fade>
+        </div>
+        <div className="flex flex-col md-1000:flex-row justify-between  gap-10 w-full">
+          {side.slice(0, 1).map((item, index) => {
+            return (
+              <div className="flex flex-col gap-5" key={index}>
+                <div className=" bg-gray-200 rounded-3xl overflow-hidden shadow-md md-1230:h-[550px] transition duration-300 ease-in-out hover:scale-[1.02] hover:shadow-custom-blue">
+                  <video
+                    autoPlay
+                    muted
+                    controls
+                    className="h-full md:w-full object-cover"
+                  >
+                    <source src={item.img} type="" />
+                  </video>
+                </div>
+                <div className="bg-[#ffcce9] self-start rounded-3xl py-2 px-3 flex gap-1">
+                  <div className="scale-75 py-[1px] px-[11px] rounded-full bg-[#891a80]"></div>
+                  <span className="text-[#891b80] text-[14px]">
+                    Side Project
+                  </span>
+                </div>
+                <div>
+                  <h1 className="text-2xl font-semibold mb-2">{item.name}</h1>
+                  <p className="opacity-80">{item.shortDesc}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <Fade duration={1500} fraction={0.1} triggerOnce="true" direction="up">
+          <div className="flex flex-col md-1000:flex-row justify-between  gap-10 w-full mt-10">
+            {side.slice(1, 3).map((item, index) => {
+              return (
+                <div className="flex flex-col gap-5 md-1000:w-1/2" key={index}>
+                  <div className=" bg-gray-200 rounded-3xl overflow-hidden shadow-md w-full h-full md-1000:max-w-[615px] md-1000:h-[378px] transition duration-300 ease-in-out hover:scale-[1.02] hover:shadow-custom-blue">
+                    <Image
+                      src={item.img}
+                      alt={item.name}
+                      className=" object-cover w-full h-full"
+                    />
+                  </div>
+                  <div className="bg-[#ffcce9] self-start rounded-3xl py-2 px-3 flex gap-1">
+                    <div className="scale-75 py-[1px] px-[11px] rounded-full bg-[#891a80]"></div>
+                    <span className="text-[#891b80] text-[14px]">
+                      Side Project
+                    </span>
+                  </div>
+                  <div>
+                    <h1 className="text-2xl font-semibold mb-2">{item.name}</h1>
+                    <p className="opacity-80">{item.shortDesc}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </Fade>
+
+        <div className="flex flex-col md-1000:flex-row justify-between  gap-10 w-full mt-10">
+          {side.slice(3, 5).map((item, index) => {
+            return (
+              <div className="flex flex-col gap-5 md-1000:w-1/2" key={index}>
+                <div className=" bg-gray-200 rounded-3xl overflow-hidden shadow-md transition duration-300 ease-in-out hover:scale-[1.02] hover:shadow-custom-blue">
+                  <Image
+                    src={item.img}
+                    alt={item.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="bg-[#ffcce9] self-start rounded-3xl py-2 px-3 flex gap-1">
+                  <div className="scale-75 py-[1px] px-[11px] rounded-full bg-[#891a80]"></div>
+                  <span className="text-[#891b80] text-[14px]">
+                    Side Project
+                  </span>
+                </div>
+                <div>
+                  <h1 className="text-2xl font-semibold mb-2">{item.name}</h1>
+                  <p className="opacity-80">{item.shortDesc}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </main>

@@ -1,6 +1,9 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useLayoutEffect } from "react";
+import { Fade } from "react-awesome-reveal";
 import { IoMenu } from "react-icons/io5";
+import styles from "./Navbar.module.css";
+import Link from "next/link";
 const Sidebar = ({ showSideBar, setShowSideBar }) => {
   return (
     <div
@@ -49,6 +52,42 @@ const BlinkPage = ({ blink, currentIndex, setCurrentIndex }) => {
   );
 };
 
+const SplashScreen = () => {
+  const [splash, setSplash] = useState(true);
+
+  useLayoutEffect(() => {
+    setSplash(true);
+    setTimeout(() => {
+      setSplash(false);
+    }, 1000);
+  }, []);
+
+  return (
+    <div
+      className={`w-full h-screen bg-primary fixed top-0 left-0 flex items-center justify-center text-white z-50 transition duration-300 ease-in-out ${
+        splash ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
+      <div className=" text-2xl md:text-[40px] py-5 flex gap-3 overflow-hidden relative">
+        <Fade delay={0} duration={1000} direction="up">
+          <span>Imagine.</span>
+        </Fade>
+        <Fade delay={0} duration={1000} direction="up">
+          <span> Create.</span>
+        </Fade>
+        <Fade delay={0} duration={1000} direction="up">
+          <span> Amaze.</span>
+        </Fade>
+        <div className="absolute w-full bg-gray-300 h-1 rounded-full bottom-0">
+          <div
+            className={`${styles.expands} bg-white rounded-l-full bottom-0 h-1`}
+          ></div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Navbar = () => {
   const [blink, setBlink] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -87,7 +126,7 @@ const Navbar = () => {
           setCurrentIndex={setCurrentIndex}
         />
         <Sidebar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
-
+        <SplashScreen />
         <div className="flex justify-between items-center w-[1400px] max-w-full h-full mx-auto text-white">
           <span className="text-3xl md:text-4xl font-bold">Portfolio.</span>
           <div className="hidden md:flex gap-10 text-[18px]">
@@ -99,14 +138,14 @@ const Navbar = () => {
               About
               <div className="absolute bg-white scale-0 group-hover:scale-100 group-hover:w-full h-1 rounded-full transition-all duration-300 ease-in-out "></div>
             </span>
-            <span className="relative group transition">
+            <Link href="#skills" className="relative group transition">
               Skills
               <div className="absolute bg-white scale-0 group-hover:scale-100 group-hover:w-full h-1 rounded-full transition-all duration-300 ease-in-out "></div>
-            </span>
-            <span className="relative group transition">
+            </Link>
+            <Link href="#projects" className="relative group transition">
               Projects
               <div className="absolute bg-white scale-0 group-hover:scale-100 group-hover:w-full h-1 rounded-full transition-all duration-300 ease-in-out "></div>
-            </span>
+            </Link>
             <span className="relative group transition">
               Contact
               <div className="absolute bg-white scale-0 group-hover:scale-100 group-hover:w-full h-1 rounded-full transition-all duration-300 ease-in-out "></div>

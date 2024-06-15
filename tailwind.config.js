@@ -19,6 +19,9 @@ module.exports = {
         "md-900": "900px",
         "md-1230": "1230px",
       },
+      boxShadow: {
+        "custom-blue": "0 0 5px rgba(0,0,0,0.15)",
+      },
     },
   },
   plugins: [],
