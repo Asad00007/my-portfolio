@@ -21,6 +21,8 @@ module.exports = {
       },
       boxShadow: {
         "custom-blue": "0 0 5px rgba(0,0,0,0.15)",
+        "custom-full": "0 0 15px rgba(0,0,0,0.15)",
+        "custom-solid": "10px 10px 0 #2f59c5",
       },
     },
   },

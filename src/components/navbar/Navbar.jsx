@@ -4,17 +4,43 @@ import { Fade } from "react-awesome-reveal";
 import { IoMenu } from "react-icons/io5";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 const Sidebar = ({ showSideBar, setShowSideBar }) => {
+  const pathname = usePathname();
+  const router = useRouter();
+  const toggleRedirect = (title) => {
+    setShowSideBar(false);
+    if (pathname === "/") {
+      return;
+    } else {
+      setTimeout(() => router.push(`#${title}`), 750);
+    }
+  };
   return (
     <div
       className={`flex flex-col md:hidden gap-14 text-[18px] p-10 py-12 w-[200px] text-white transition-all bg-primary h-screen fixed top-0 right-0 duration-300 ease-in-out ${
         showSideBar ? " translate-x-0" : " translate-x-[100%]"
       }`}
     >
-      <span>Home</span>
-      <span>About</span>
-      <span>Skills</span>
-      <span>Projects</span>
+      <Link href="/" onClick={() => setShowSideBar(false)}>
+        Home
+      </Link>
+      <Link href="/about" onClick={() => setShowSideBar(false)}>
+        About
+      </Link>
+      <Link
+        href={pathname !== "/" ? "/" : "#skills"}
+        onClick={() => toggleRedirect("skills")}
+      >
+        Skills
+      </Link>
+      <Link
+        href={pathname !== "/" ? "/" : "#projects"}
+        onClick={() => toggleRedirect("projects")}
+      >
+        Projects
+      </Link>
       <span>Contact</span>
       <span
         className="text-3xl cursor-pointer"
@@ -92,6 +118,8 @@ const Navbar = () => {
   const [blink, setBlink] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const resizeTimeout = useRef(null); // Using useRef to store the timeout ID
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const toggleResize = () => {
@@ -117,6 +145,13 @@ const Navbar = () => {
     };
   }, [blink]);
   const [showSideBar, setShowSideBar] = useState(false);
+  const toggleRedirect = (title) => {
+    if (pathname === "/") {
+      return;
+    } else {
+      setTimeout(() => router.push(`#${title}`), 750);
+    }
+  };
   return (
     <div>
       <nav className="fixed top-0 left-0 z-50 bg-primary h-[100px] w-full px-4 shadow-md">
@@ -128,21 +163,31 @@ const Navbar = () => {
         <Sidebar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
         <SplashScreen />
         <div className="flex justify-between items-center w-[1400px] max-w-full h-full mx-auto text-white">
-          <span className="text-3xl md:text-4xl font-bold">Portfolio.</span>
+          <Link href="/" className="text-3xl md:text-4xl font-bold">
+            Portfolio.
+          </Link>
           <div className="hidden md:flex gap-10 text-[18px]">
-            <span className="relative group transition">
+            <Link href="/" className="relative group transition">
               Home
               <div className="absolute bg-white scale-0 group-hover:scale-100 group-hover:w-full h-1 rounded-full transition-all duration-300 ease-in-out "></div>
-            </span>
-            <span className="relative group transition">
+            </Link>
+            <Link href="/about" className="relative group transition">
               About
               <div className="absolute bg-white scale-0 group-hover:scale-100 group-hover:w-full h-1 rounded-full transition-all duration-300 ease-in-out "></div>
-            </span>
-            <Link href="#skills" className="relative group transition">
+            </Link>
+            <Link
+              href={pathname !== "/" ? "/" : "#skills"}
+              className="relative group transition"
+              onClick={() => toggleRedirect("skills")}
+            >
               Skills
               <div className="absolute bg-white scale-0 group-hover:scale-100 group-hover:w-full h-1 rounded-full transition-all duration-300 ease-in-out "></div>
             </Link>
-            <Link href="#projects" className="relative group transition">
+            <Link
+              href={pathname !== "/" ? "/" : "#projects"}
+              className="relative group transition"
+              onClick={() => toggleRedirect("projects")}
+            >
               Projects
               <div className="absolute bg-white scale-0 group-hover:scale-100 group-hover:w-full h-1 rounded-full transition-all duration-300 ease-in-out "></div>
             </Link>

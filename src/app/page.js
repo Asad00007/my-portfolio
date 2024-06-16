@@ -4,7 +4,7 @@ import { Poppins } from "next/font/google";
 import { ReactTyped } from "react-typed";
 import { IoMdRefresh } from "react-icons/io";
 import Asad from "@/assets/AsadUllah.jpg";
-
+// import AsadResume from "@/assets/Asad-Ullah-Resume.pdf";
 import Hand from "@/assets/Hand.gif";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa6";
 import { side, work } from "../../data";
@@ -12,6 +12,8 @@ import { Fade, Flip } from "react-awesome-reveal";
 import Image from "next/image";
 import { skills } from "../../data";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import Chat from "@/components/chat/Chat";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -26,7 +28,7 @@ export default function Home() {
       {/* <Navbar /> */}
       <div className="w-[1300px] mx-auto max-w-full px-5 py-20 md-1230:py-10 flex flex-col md-1230:flex-row gap-5 justify-between md-1230:h-screen-minus-100 mt-[100px] items-center">
         <div className="basis-full md:basis-1/2 ">
-          <h3 className="text-2xl md:text-3xl mb-5 flex items-center">
+          <h3 className="text-2xl md:text-3xl mb-3 flex items-center">
             Hello,
             <div className="w-[35px] h-[35px]">
               <Image src={Hand} alt="waving" />
@@ -39,7 +41,7 @@ export default function Home() {
             className="text-3xl md:text-[55px] leading-normal"
           />
           <br />
-          <div className="my-4"></div>
+          <div className="my-3"></div>
           <ReactTyped
             strings={["Web Developer", "Tech Enthusiast", "Software Engineer"]}
             typeSpeed={40}
@@ -47,14 +49,21 @@ export default function Home() {
             loop
             className="text-2xl md:text-3xl "
           ></ReactTyped>
-          <p className="my-5">
+          <p className="my-5 mb-10">
             I'm a web developer with a strong background in creating dynamic and
             responsive websites. I have a deep understanding of front-end and
             back-end technologies, and I love bringing innovative web
             applications to life.
           </p>
+          <a
+            href="/Asad-Ullah-Resume.pdf"
+            download="Asad_Ullah_CV.pdf"
+            className="bg-primary py-2 px-7 text-white rounded-md transition duration-300 ease-in-out hover:bg-opacity-90"
+          >
+            Download CV
+          </a>
         </div>
-        <div className="basis-full md:basis-1/2 flex flex-col-reverse gap-5 md:gap-0 md:flex-row md:mt-24 md-1230:mt-0">
+        <div className="basis-full md:basis-1/2 flex flex-col-reverse gap-5 md:gap-0 md:flex-row mt-10 md:mt-24 md-1230:mt-0">
           <div className="border-2 border-primary rounded-2xl md:w-[400px] overflow-hidden md:translate-x-10 md-1100:translate-x-16 md:translate-y-12">
             <div className="w-full border-b-2  border-primary p-3 flex justify-center items-center gap-3 bg-primary bg-opacity-30 relative">
               <div className="flex gap-2 absolute top-4 left-4">
@@ -161,9 +170,10 @@ export default function Home() {
           </button>
         </div>
       </Fade>
+
       <Fade duration={1500} fraction={0.2} triggerOnce="true">
         <div
-          className="w-[1300px] max-w-full mx-auto px-4 pt-5 pb-10 flex flex-col items-center justify-center"
+          className="w-[1300px] max-w-full mx-auto px-4 pt-5 pb-10 flex flex-col items-center justify-center "
           id="skills"
         >
           <h1 className="text-2xl md:text-4xl font-semibold text-center my-10">
@@ -192,14 +202,18 @@ export default function Home() {
           <div
             className="text-primary font-semibold hover:underline cursor-pointer mt-5"
             onClick={() => setShowMore(!showMore)}
+            id="projects"
           >
             {showMore ? "Show less" : "Show more"}
           </div>
         </div>
       </Fade>
-      <div className="w-[1300px] max-w-full mx-auto px-5 py-10" id="projects">
+      <div className="w-[1300px] max-w-full mx-auto px-5 py-10">
         <Fade duration={1500} fraction={0.2} triggerOnce="true">
-          <div className="flex flex-wrap justify-between items-center gap-3">
+          <div
+            className="flex flex-wrap justify-between items-center gap-3"
+            id="work"
+          >
             <div className="md:w-[570px] md-900:w-[700px] space-y-3">
               <h1 className="text-2xl md:text-4xl font-semibold ">
                 My Projects
@@ -217,16 +231,22 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-row md:flex-col gap-3">
-              <div className="bg-[#d6ddff] self-start md:self-end md:text-right rounded-3xl py-2 px-3 flex gap-1">
+              <Link
+                href="#work"
+                className="bg-[#d6ddff] self-start md:self-end md:text-right rounded-3xl py-2 px-3 flex gap-1"
+              >
                 <div className="scale-75 py-[1px] px-[11px] rounded-full bg-[#2e33cd]"></div>
                 <span className="text-[#2e33cd] text-[14px]">Work</span>
-              </div>
-              <div className="bg-[#ffcce9] self-end text-right rounded-3xl py-2 px-3 flex gap-1">
+              </Link>
+              <Link
+                href="#sideprojects"
+                className="bg-[#ffcce9] self-end text-right rounded-3xl py-2 px-3 flex gap-1"
+              >
                 <div className="scale-75 py-[1px] px-[11px] rounded-full bg-[#891a80]"></div>
                 <span className="text-[#891b80] text-[14px]">
                   Side Projects
                 </span>
-              </div>
+              </Link>
             </div>
           </div>
         </Fade>
@@ -290,7 +310,10 @@ export default function Home() {
             </div>
           </Fade>
         </div>
-        <div className="flex flex-col md-1000:flex-row justify-between  gap-10 w-full">
+        <div
+          className="flex flex-col md-1000:flex-row justify-between  gap-10 w-full"
+          id="sideprojects"
+        >
           {side.slice(0, 1).map((item, index) => {
             return (
               <div className="flex flex-col gap-5" key={index}>
@@ -319,10 +342,10 @@ export default function Home() {
           })}
         </div>
         <Fade duration={1500} fraction={0.1} triggerOnce="true" direction="up">
-          <div className="flex flex-col md-1000:flex-row justify-between  gap-10 w-full mt-10">
+          <div className="flex flex-col md-1000:flex-row justify-between  gap-10 w-full mt-10 overflow-hidden">
             {side.slice(1, 3).map((item, index) => {
               return (
-                <div className="flex flex-col gap-5 md-1000:w-1/2" key={index}>
+                <div className="flex flex-col gap-5 md-1000:w-1/2 " key={index}>
                   <div className=" bg-gray-200 rounded-3xl overflow-hidden shadow-md w-full h-full md-1000:max-w-[615px] md-1000:h-[378px] transition duration-300 ease-in-out hover:scale-[1.02] hover:shadow-custom-blue">
                     <Image
                       src={item.img}
