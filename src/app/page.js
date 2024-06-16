@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <main className={poppins.className}>
       {/* <Navbar /> */}
-      <div className="w-[1300px] mx-auto max-w-full px-5 py-20 md-1230:py-10 flex flex-col md-1230:flex-row gap-5 justify-between md-1230:h-screen-minus-100 mt-[100px] items-center">
+      <div className="w-[1300px] mx-auto max-w-full px-5 py-10 md-1230:py-10 flex flex-col md-1230:flex-row gap-5 justify-between md-1230:h-screen-minus-100 mt-[100px] items-center">
         <div className="basis-full md:basis-1/2 ">
           <h3 className="text-2xl md:text-3xl mb-3 flex items-center">
             Hello,

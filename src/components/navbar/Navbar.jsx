@@ -51,32 +51,32 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
     </div>
   );
 };
-const BlinkPage = ({ blink, currentIndex, setCurrentIndex }) => {
-  const arr = ["Don't Blink... ", "Don't Blink... ", 3, 2, 1];
+// const BlinkPage = ({ blink, currentIndex, setCurrentIndex }) => {
+//   const arr = ["Don't Blink... ", "Don't Blink... ", 3, 2, 1];
 
-  useEffect(() => {
-    if (!blink) return;
+//   useEffect(() => {
+//     if (!blink) return;
 
-    if (currentIndex < arr.length) {
-      const timer = setTimeout(() => {
-        setCurrentIndex((prevIndex) => prevIndex + 1);
-      }, 300);
+//     if (currentIndex < arr.length) {
+//       const timer = setTimeout(() => {
+//         setCurrentIndex((prevIndex) => prevIndex + 1);
+//       }, 300);
 
-      return () => {
-        clearTimeout(timer);
-      };
-    }
-  }, [currentIndex, blink]);
-  return (
-    <div
-      className={`bg-primary h-screen w-full flex top-0 left-0 items-center justify-center fixed z-50 transition duration-300 ease-out ${
-        blink ? "translate-y-0" : "-translate-y-[100%]"
-      } text-white text-xl`}
-    >
-      {blink && <p>{arr[currentIndex]}</p>}
-    </div>
-  );
-};
+//       return () => {
+//         clearTimeout(timer);
+//       };
+//     }
+//   }, [currentIndex, blink]);
+//   return (
+//     <div
+//       className={`bg-primary h-screen w-full flex top-0 left-0 items-center justify-center fixed z-50 transition duration-300 ease-out ${
+//         blink ? "translate-y-0" : "-translate-y-[100%]"
+//       } text-white text-xl`}
+//     >
+//       {blink && <p>{arr[currentIndex]}</p>}
+//     </div>
+//   );
+// };
 
 const SplashScreen = () => {
   const [splash, setSplash] = useState(true);
@@ -85,7 +85,7 @@ const SplashScreen = () => {
     setSplash(true);
     setTimeout(() => {
       setSplash(false);
-    }, 750);
+    }, 1000);
   }, []);
 
   return (
@@ -95,13 +95,13 @@ const SplashScreen = () => {
       }`}
     >
       <div className=" text-2xl md:text-[40px] py-5 flex gap-3 overflow-hidden relative">
-        <Fade delay={0} duration={750} direction="up">
+        <Fade delay={0} duration={1000} direction="up">
           <span>Imagine.</span>
         </Fade>
-        <Fade delay={0} duration={750} direction="up">
+        <Fade delay={0} duration={1000} direction="up">
           <span> Create.</span>
         </Fade>
-        <Fade delay={0} duration={750} direction="up">
+        <Fade delay={0} duration={1000} direction="up">
           <span> Amaze.</span>
         </Fade>
         <div className="absolute w-full bg-gray-300 h-1 rounded-full bottom-0">
@@ -115,35 +115,35 @@ const SplashScreen = () => {
 };
 
 const Navbar = () => {
-  const [blink, setBlink] = useState(false);
+  // const [blink, setBlink] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const resizeTimeout = useRef(null); // Using useRef to store the timeout ID
   const pathname = usePathname();
   const router = useRouter();
 
-  useEffect(() => {
-    const toggleResize = () => {
-      if (window.innerWidth < 1100) {
-        setBlink(true);
+  // useEffect(() => {
+  //   const toggleResize = () => {
+  //     if (window.innerWidth < 1100) {
+  //       setBlink(true);
 
-        if (resizeTimeout.current) {
-          clearTimeout(resizeTimeout.current);
-        }
-        resizeTimeout.current = setTimeout(() => setBlink(false), 1500);
-      }
-    };
+  //       if (resizeTimeout.current) {
+  //         clearTimeout(resizeTimeout.current);
+  //       }
+  //       resizeTimeout.current = setTimeout(() => setBlink(false), 1500);
+  //     }
+  //   };
 
-    window.addEventListener("resize", toggleResize);
+  //   window.addEventListener("resize", toggleResize);
 
-    return () => {
-      if (resizeTimeout.current) {
-        clearTimeout(resizeTimeout.current);
-      }
-      window.removeEventListener("resize", toggleResize);
-      setTimeout(() => setBlink(false), 1500);
-      setCurrentIndex(0);
-    };
-  }, [blink]);
+  //   return () => {
+  //     if (resizeTimeout.current) {
+  //       clearTimeout(resizeTimeout.current);
+  //     }
+  //     window.removeEventListener("resize", toggleResize);
+  //     setTimeout(() => setBlink(false), 1500);
+  //     setCurrentIndex(0);
+  //   };
+  // }, [blink]);
   const [showSideBar, setShowSideBar] = useState(false);
   const toggleRedirect = (title) => {
     if (pathname === "/") {
@@ -155,11 +155,11 @@ const Navbar = () => {
   return (
     <div>
       <nav className="fixed top-0 left-0 z-50 bg-primary h-[100px] w-full px-4 shadow-md">
-        <BlinkPage
+        {/* <BlinkPage
           blink={blink}
           currentIndex={currentIndex}
           setCurrentIndex={setCurrentIndex}
-        />
+        /> */}
         <Sidebar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
         <SplashScreen />
         <div className="flex justify-between items-center w-[1400px] max-w-full h-full mx-auto text-white">
