@@ -50,10 +50,10 @@ export default function Home() {
             className="text-2xl md:text-3xl "
           ></ReactTyped>
           <p className="my-5 mb-10">
-            I'm a web developer with a strong background in creating dynamic and
-            responsive websites. I have a deep understanding of front-end and
-            back-end technologies, and I love bringing innovative web
-            applications to life.
+            I&apos;m a web developer with a strong background in creating
+            dynamic and responsive websites. I have a deep understanding of
+            front-end and back-end technologies, and I love bringing innovative
+            web applications to life.
           </p>
           <a
             href="/Asad-Ullah-Resume.pdf"
@@ -219,15 +219,15 @@ export default function Home() {
                 My Projects
               </h1>
               <p className="opacity-80">
-                I've been working as a front-end developer for the past year,
-                specializing in creating dynamic, responsive web applications.
-                My expertise lies in HTML, CSS, JavaScript, and React. I excel
-                at translating design into interactive, efficient user
-                experiences, ensuring high-quality code and optimal performance.
-                I often take on additional responsibilities to ensure project
-                success and user satisfaction. Outside of “work-work,” I love
-                experimenting with new technologies and developing side
-                projects, some of which are showcased here.
+                I&apos;ve been working as a front-end developer for the past
+                year, specializing in creating dynamic, responsive web
+                applications. My expertise lies in HTML, CSS, JavaScript, and
+                React. I excel at translating design into interactive, efficient
+                user experiences, ensuring high-quality code and optimal
+                performance. I often take on additional responsibilities to
+                ensure project success and user satisfaction. Outside of
+                “work-work,” I love experimenting with new technologies and
+                developing side projects, some of which are showcased here.
               </p>
             </div>
             <div className="flex flex-row md:flex-col gap-3">

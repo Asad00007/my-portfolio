@@ -81,11 +81,11 @@ const BlinkPage = ({ blink, currentIndex, setCurrentIndex }) => {
 const SplashScreen = () => {
   const [splash, setSplash] = useState(true);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setSplash(true);
     setTimeout(() => {
       setSplash(false);
-    }, 1000);
+    }, 750);
   }, []);
 
   return (
@@ -95,13 +95,13 @@ const SplashScreen = () => {
       }`}
     >
       <div className=" text-2xl md:text-[40px] py-5 flex gap-3 overflow-hidden relative">
-        <Fade delay={0} duration={1000} direction="up">
+        <Fade delay={0} duration={750} direction="up">
           <span>Imagine.</span>
         </Fade>
-        <Fade delay={0} duration={1000} direction="up">
+        <Fade delay={0} duration={750} direction="up">
           <span> Create.</span>
         </Fade>
-        <Fade delay={0} duration={1000} direction="up">
+        <Fade delay={0} duration={750} direction="up">
           <span> Amaze.</span>
         </Fade>
         <div className="absolute w-full bg-gray-300 h-1 rounded-full bottom-0">
