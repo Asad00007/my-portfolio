@@ -5,7 +5,7 @@ import { ReactTyped } from "react-typed";
 import { IoMdRefresh } from "react-icons/io";
 import Asad from "@/assets/AsadUllah.jpg";
 // import AsadResume from "@/assets/Asad-Ullah-Resume.pdf";
-import Hand from "@/assets/Hand.gif";
+import Hand from "@/assets/hand.gif";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa6";
 import { side, work } from "../../data";
 import { Fade, Flip } from "react-awesome-reveal";
