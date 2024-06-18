@@ -64,7 +64,7 @@ export default function Home() {
           </a>
         </div>
         <div className="basis-full md:basis-1/2 flex flex-col-reverse gap-5 md:gap-0 md:flex-row mt-10 md:mt-24 md-1230:mt-0">
-          <div className="border-2 border-primary rounded-2xl md:w-[400px] overflow-hidden md:translate-x-10 md-1100:translate-x-16 md:translate-y-12">
+          <div className="border-2 border-primary rounded-2xl md:w-[400px]  overflow-hidden md:translate-x-10 md-1100:translate-x-16 md:translate-y-12">
             <div className="w-full border-b-2  border-primary p-3 flex justify-center items-center gap-3 bg-primary bg-opacity-30 relative">
               <div className="flex gap-2 absolute top-4 left-4">
                 <div className="border-2 border-primary p-2 rounded-full bg-white"></div>
@@ -130,7 +130,7 @@ export default function Home() {
         </div>
       </div>
       <Fade duration={1500} fraction={0.2} triggerOnce="true">
-        <div className="w-[1300px] max-w-full mx-auto  px-4 md-1100:h-screen-minus-100 flex flex-col items-center justify-between py-5 gap-6 ">
+        <div className="w-[1300px] max-w-full mx-auto  px-4 md-1100:h-screen-minus-100 flex flex-col items-center justify-between py-5 gap-6 md:mt-10 md-1230:mt-0">
           <h1 className="text-2xl md:text-4xl font-semibold text-center">
             Featured project made using{" "}
             <span className="text-primary">MERN</span> stack
