@@ -87,8 +87,9 @@ const Chat = () => {
               What personal projects are you working on?
             </div>
             <div className="p-2 px-4 rounded-3xl bg-gray-100 text-black text-[14px] w-[230px] flex justify-center">
-              I recently finished this portfolio website as a side project. I'm
-              thinking of creating a full stack application in the future.
+              I recently finished this portfolio website as a side project.
+              I&apos;m thinking of creating a full stack application in the
+              future.
             </div>
           </>
         )}
