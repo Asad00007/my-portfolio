@@ -50,18 +50,10 @@ const About = () => {
           <h1 className="text-xl text-primary">Personal Life</h1>
           <p>
             When I&apos;m not creating websites, I engage in activities that
-            stimulate my mind and foster creativity. For the past six months,
-            I&apos;ve been sharpening my strategic thinking through chess, a
-            pursuit that aligns with my preference for intellectually
-            stimulating challenges. Recently, I discovered &quot;Schulte
-            Table,&quot; a game I find particularly intriguing due to its
-            cognitive demands, motivating me to delve deeper into its
-            complexities. Additionally, I maintain a commitment to physical
-            fitness through regular exercise and continually seek to expand my
-            creative horizons, most recently exploring sketching as a new hobby.
-            These activities not only complement my technical skills but also
-            contribute to a well-rounded approach to personal and professional
-            growth.
+            stimulate my mind and foster creativity. I sharpen my strategic
+            thinking through chess and explore cognitive games like the
+            &quot;Schulte Table.&quot; These activities complement my technical
+            skills and contribute to my overall growth.
             <br />
             <br />I actively pursue side projects as opportunities to acquire
             new languages and skills, leveraging them as practical learning

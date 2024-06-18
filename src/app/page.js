@@ -139,7 +139,7 @@ export default function Home() {
             <h1 className="text-xl md:text-[26px] font-semibold text-center">
               Freelancing Website
             </h1>
-            <p>
+            <p className="text-[14px] md:text-base">
               Created a freelancing website using the MERN stack that connects
               users with a diverse pool of skilled freelancers. The platform
               enables clients to post projects, review freelancer profiles, and
@@ -183,7 +183,7 @@ export default function Home() {
             {(!showMore ? half : skills).map((item, index) => {
               return (
                 <div className="flex flex-col gap-2" key={index}>
-                  <div className="flex items-center justify-center w-[150px] h-[150px] bg-primary bg-opacity-30 rounded-lg md:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer group">
+                  <div className="flex items-center justify-center w-[120px] h-[120px] md:w-[150px]  md:h-[150px] bg-primary bg-opacity-30 rounded-lg md:grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-pointer group">
                     <Image
                       src={item.link}
                       alt={item.name}
@@ -250,7 +250,7 @@ export default function Home() {
             </div>
           </div>
         </Fade>
-        <div className="flex flex-col gap-5 md:gap-10 items-center justify-center my-8 md:my-14">
+        <div className="flex flex-col gap-5 md:gap-10 items-center justify-center my-8 md:my-14 overflow-hidden">
           <Fade
             duration={1500}
             fraction={0.1}
@@ -341,33 +341,45 @@ export default function Home() {
             );
           })}
         </div>
-        <Fade duration={1500} fraction={0.1} triggerOnce="true" direction="up">
-          <div className="flex flex-col md-1000:flex-row justify-between  gap-10 w-full mt-10 overflow-hidden">
-            {side.slice(1, 3).map((item, index) => {
-              return (
-                <div className="flex flex-col gap-5 md-1000:w-1/2 " key={index}>
-                  <div className=" bg-gray-200 rounded-3xl overflow-hidden shadow-md w-full h-full md-1000:max-w-[615px] md-1000:h-[378px] transition duration-300 ease-in-out hover:scale-[1.02] hover:shadow-custom-blue">
-                    <Image
-                      src={item.img}
-                      alt={item.name}
-                      className=" object-cover w-full h-full"
-                    />
+        <div className="overflow-hidden">
+          <Fade
+            duration={1500}
+            fraction={0.1}
+            triggerOnce="true"
+            direction="up"
+          >
+            <div className="flex flex-col md-1000:flex-row justify-between  gap-10 w-full mt-10 overflow-hidden">
+              {side.slice(1, 3).map((item, index) => {
+                return (
+                  <div
+                    className="flex flex-col gap-5 md-1000:w-1/2 "
+                    key={index}
+                  >
+                    <div className=" bg-gray-200 rounded-3xl overflow-hidden shadow-md w-full h-full md-1000:max-w-[615px] md-1000:h-[378px] transition duration-300 ease-in-out hover:scale-[1.02] hover:shadow-custom-blue">
+                      <Image
+                        src={item.img}
+                        alt={item.name}
+                        className=" object-cover w-full h-full"
+                      />
+                    </div>
+                    <div className="bg-[#ffcce9] self-start rounded-3xl py-2 px-3 flex gap-1">
+                      <div className="scale-75 py-[1px] px-[11px] rounded-full bg-[#891a80]"></div>
+                      <span className="text-[#891b80] text-[14px]">
+                        Side Project
+                      </span>
+                    </div>
+                    <div>
+                      <h1 className="text-2xl font-semibold mb-2">
+                        {item.name}
+                      </h1>
+                      <p className="opacity-80">{item.shortDesc}</p>
+                    </div>
                   </div>
-                  <div className="bg-[#ffcce9] self-start rounded-3xl py-2 px-3 flex gap-1">
-                    <div className="scale-75 py-[1px] px-[11px] rounded-full bg-[#891a80]"></div>
-                    <span className="text-[#891b80] text-[14px]">
-                      Side Project
-                    </span>
-                  </div>
-                  <div>
-                    <h1 className="text-2xl font-semibold mb-2">{item.name}</h1>
-                    <p className="opacity-80">{item.shortDesc}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </Fade>
+                );
+              })}
+            </div>
+          </Fade>
+        </div>
 
         <div className="flex flex-col md-1000:flex-row justify-between  gap-10 w-full mt-10">
           {side.slice(3, 5).map((item, index) => {

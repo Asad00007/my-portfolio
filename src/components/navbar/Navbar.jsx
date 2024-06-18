@@ -19,10 +19,13 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
   };
   return (
     <div
-      className={`flex flex-col md:hidden gap-14 text-[18px] p-10 py-12 w-[200px] text-white transition-all bg-primary h-screen fixed top-0 right-0 duration-300 ease-in-out ${
-        showSideBar ? " translate-x-0" : " translate-x-[100%]"
+      className={`flex flex-col items-center justify-center md:hidden gap-14 text-[24px] px-16 py-16 w-full text-white transition-all bg-primary h-screen fixed top-0 right-0 duration-300 ease-in-out hover:bg-[#1C86EE] ${
+        showSideBar ? " scale-100 opacity-100 shadow-md" : " scale-0 opacity-0"
       }`}
     >
+      <h1 className="text-3xl md:text-4xl font-bold absolute top-8 left-10">
+        Portfolio.
+      </h1>
       <Link href="/" onClick={() => setShowSideBar(false)}>
         Home
       </Link>
@@ -41,9 +44,9 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
       >
         Projects
       </Link>
-      <span>Contact</span>
+      {/* <span>Contact</span> */}
       <span
-        className="text-3xl cursor-pointer"
+        className="text-3xl cursor-pointer absolute top-8 right-10"
         onClick={() => setShowSideBar(false)}
       >
         &times;
@@ -191,10 +194,10 @@ const Navbar = () => {
               Projects
               <div className="absolute bg-white scale-0 group-hover:scale-100 group-hover:w-full h-1 rounded-full transition-all duration-300 ease-in-out "></div>
             </Link>
-            <span className="relative group transition">
+            {/* <span className="relative group transition">
               Contact
               <div className="absolute bg-white scale-0 group-hover:scale-100 group-hover:w-full h-1 rounded-full transition-all duration-300 ease-in-out "></div>
-            </span>
+            </span> */}
           </div>
           <div
             className="block md:hidden cursor-pointer"

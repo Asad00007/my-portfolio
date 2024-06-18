@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="w-[1300px] px-5 py-10 max-w-full mx-auto  h-full text-white ">
         <div className="flex justify-center flex-col items-center gap-5 relative">
           <div
-            className="absolute right-0 md:-right-5 top-0  p-2 bg-white text-primary rounded-full cursor-pointer"
+            className="absolute right-0 md:right-2 top-0  p-2 bg-white text-primary rounded-full cursor-pointer"
             title="Back to top"
             onClick={handleScrollTop}
           >
@@ -54,6 +54,9 @@ const Footer = () => {
         </div>
         <div className="flex items-center justify-center pt-5">
           Copyright © 2024{" "}
+        </div>
+        <div className="text-xs opacity-80 flex items-center justify-center pt-5">
+          For best view, visit this website on a laptop or desktop
         </div>
       </div>
     </footer>
