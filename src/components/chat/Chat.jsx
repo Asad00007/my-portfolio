@@ -5,7 +5,6 @@ import { MdMessage } from "react-icons/md";
 
 const Chat = () => {
   const [showChat, setShowChat] = useState(false);
-
   const [current, setCurrent] = useState(0);
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -52,7 +51,6 @@ const Chat = () => {
               <span onClick={handlePlayPause} className="cursor-pointer">
                 {isPlaying ? "Pause" : "Play"} theme song
               </span>
-              <audio ref={audioRef} src="/themeSong.mp3" />
             </div>
           </>
         )}
@@ -94,6 +92,7 @@ const Chat = () => {
           </>
         )}
       </div>
+      <audio ref={audioRef} src="/themeSong.mp3" />
       <MdMessage
         className="text-2xl cursor-pointer"
         onClick={() => setShowChat(!showChat)}
