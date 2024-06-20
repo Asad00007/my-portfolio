@@ -165,7 +165,7 @@ const Navbar = () => {
         /> */}
         <Sidebar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
         <SplashScreen />
-        <div className="flex justify-between items-center w-[1400px] max-w-full h-full mx-auto text-white">
+        <div className="flex justify-between items-center w-[95%] md:w-[90%] max-w-full h-full mx-auto text-white">
           <Link href="/" className="text-3xl md:text-4xl font-bold">
             Portfolio.
           </Link>

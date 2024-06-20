@@ -6,7 +6,7 @@ import { FaUserTie } from "react-icons/fa6";
 const About = () => {
   return (
     <main>
-      <div className="w-[1200px] mx-auto max-w-full px-5  mt-[100px]">
+      <div className="w-[1200px] min-h-screen mx-auto max-w-full px-5  mt-[100px]">
         <div className="flex gap-3 items-center justify-center py-10 md:py-20 overflow-hidden ">
           <Fade duration={500} triggerOnce="true" direction="up">
             <FaUserTie className="text-4xl" />

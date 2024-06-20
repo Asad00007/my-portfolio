@@ -130,7 +130,7 @@ export default function Home() {
         </div>
       </div>
       <Fade duration={1500} fraction={0.2} triggerOnce="true">
-        <div className="w-[1300px] max-w-full mx-auto  px-4 md-1100:h-screen-minus-100 flex flex-col items-center justify-between py-5 gap-6 md:mt-10 md-1230:mt-0">
+        <div className="w-[1300px] max-w-full mx-auto  px-4  flex flex-col items-center justify-between py-5 gap-6 md:mt-10 md-1230:mt-0">
           <h1 className="text-2xl md:text-4xl font-semibold text-center">
             Featured project made using{" "}
             <span className="text-primary">MERN</span> stack
@@ -160,12 +160,14 @@ export default function Home() {
                 </div>
               </Flip>
               <div>
-                <h1 className="text-[18px]">Asad Ullah</h1>
-                <h2 className="opacity-80">Air University, Islamabad</h2>
+                <h1 className="text-base md:text-[18px]">Asad Ullah</h1>
+                <h2 className="text-[14px] md:text-base opacity-80">
+                  Air University, Islamabad
+                </h2>
               </div>
             </div>
           </div>
-          <button className="bg-primary rounded-[32px] py-5 px-20 text-white text-[18px] hover:bg-opacity-95 hover:scale-95 transition duration-300 ease-in-out ">
+          <button className="bg-primary rounded-[32px] py-4 px-10 md:py-5 md:px-20 text-white text-[18px] hover:bg-opacity-95 hover:scale-95 transition duration-300 ease-in-out ">
             Explore more
           </button>
         </div>
@@ -250,7 +252,7 @@ export default function Home() {
             </div>
           </div>
         </Fade>
-        <div className="flex flex-col gap-5 md:gap-10 items-center justify-center my-8 md:my-14 overflow-hidden">
+        <div className="flex flex-col gap-5 md:gap-10 items-center justify-center my-8 md:my-14 ">
           <Fade
             duration={1500}
             fraction={0.1}
@@ -341,14 +343,14 @@ export default function Home() {
             );
           })}
         </div>
-        <div className="overflow-hidden">
+        <div className="">
           <Fade
             duration={1500}
             fraction={0.1}
             triggerOnce="true"
             direction="up"
           >
-            <div className="flex flex-col md-1000:flex-row justify-between  gap-10 w-full mt-10 overflow-hidden">
+            <div className="flex flex-col md-1000:flex-row justify-between  gap-10 w-full mt-10 ">
               {side.slice(1, 3).map((item, index) => {
                 return (
                   <div
