@@ -107,9 +107,9 @@ const SplashScreen = () => {
         <Fade delay={0} duration={1000} direction="up">
           <span> Amaze.</span>
         </Fade>
-        <div className="absolute w-full bg-gray-300 h-1 rounded-full bottom-0">
+        <div className="absolute w-full bg-gray-300 h-1 rounded-full bottom-0 overflow-hidden">
           <div
-            className={`${styles.expands} bg-white rounded-l-full bottom-0 h-1`}
+            className={`${styles.expands} bg-white rounded-full overflow-hidden bottom-0 h-1`}
           ></div>
         </div>
       </div>

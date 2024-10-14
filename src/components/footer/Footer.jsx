@@ -55,7 +55,7 @@ const Footer = () => {
         <div className="flex items-center justify-center pt-5">
           Copyright © 2024{" "}
         </div>
-        <div className="text-xs opacity-80 flex items-center justify-center pt-5">
+        <div className="text-[10px] opacity-80 flex items-center justify-center pt-5">
           For best view, visit this website on a laptop or desktop
         </div>
       </div>

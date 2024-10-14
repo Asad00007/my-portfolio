@@ -73,7 +73,7 @@ export default function Home() {
               </div>
               <div className="uppercase text-primary font-semibold">Links</div>
             </div>
-            <div className="p-10 text-primary">
+            <div className="p-7 md:p-10 text-primary">
               <h1 className="text-[18px] font-semibold mb-3 select-none">
                 Me, elsewhere
               </h1>
@@ -116,7 +116,7 @@ export default function Home() {
                 <IoMdRefresh className="text-primary" />
               </div>
             </div>
-            <div className="p-10 bg-white text-primary">
+            <div className="p-7 md:p-10 bg-white text-primary">
               <h1 className="text-[18px] font-semibold mb-3 select-none">
                 ABOUT ME
               </h1>
@@ -175,7 +175,7 @@ export default function Home() {
 
       <Fade duration={1500} fraction={0.2} triggerOnce="true">
         <div
-          className="w-[1300px] max-w-full mx-auto px-4 pt-5 pb-10 flex flex-col items-center justify-center "
+          className="w-[1300px] max-w-full mx-auto px-4 pt-5 pb-10 flex flex-col items-center justify-center scroll-mt-12"
           id="skills"
         >
           <h1 className="text-2xl md:text-4xl font-semibold text-center my-10">
@@ -343,7 +343,7 @@ export default function Home() {
             );
           })}
         </div>
-        <div className="">
+        <div className="overflow-hidden">
           <Fade
             duration={1500}
             fraction={0.1}

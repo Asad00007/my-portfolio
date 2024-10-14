@@ -67,8 +67,7 @@ const Chat = () => {
               What are you upto now?
             </div>
             <div className="p-2 px-4 rounded-3xl bg-gray-100 text-black text-[14px] w-[230px] flex justify-center">
-              Currently, I am working on a company website admin panel and
-              developing their APIs.
+              Currently, I am learning Laravel.
             </div>
           </>
         )}
@@ -85,9 +84,7 @@ const Chat = () => {
               What personal projects are you working on?
             </div>
             <div className="p-2 px-4 rounded-3xl bg-gray-100 text-black text-[14px] w-[230px] flex justify-center">
-              I recently finished this portfolio website as a side project.
-              I&apos;m thinking of creating a full stack application in the
-              future.
+              I&apos;m working on a full stack blogging website right now.
             </div>
           </>
         )}
