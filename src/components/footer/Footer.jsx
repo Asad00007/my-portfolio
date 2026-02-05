@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex items-center justify-center pt-5">
-          Copyright © 2024{" "}
+          Copyright © {new Date().getFullYear()}{" "}
         </div>
         <div className="text-[10px] opacity-80 flex items-center justify-center pt-5">
           For best view, visit this website on a laptop or desktop
