@@ -2,9 +2,9 @@ import Flip1 from "@/assets/Flip.jpg";
 import Awara from "@/assets/Awara.jpg";
 import Spotified from "@/assets/Spotified.jpg";
 import Uniapp from "@/assets/Uniapp.jpg";
-import sig from "@/assets/sig.PNG";
+import sig from "@/assets/sig.png";
 import Weather from "@/assets/Weather.jpg";
-import Hubble from "@/assets/Hubble.PNG";
+import Hubble from "@/assets/Hubble.png";
 import flappy from "@/assets/flappy.jpg";
 
 export const skills = [
